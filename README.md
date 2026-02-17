@@ -10,6 +10,54 @@
 [![Service: KakaoTalk Chatbot](https://img.shields.io/badge/Service-KakaoTalk%20Chatbot-F7E600.svg)](https://i.kakao.com/)
 
 ---
+## 📂 Project Structure
+
+```bash
+TRINITY/
+├── 📂 interfaces/           # [KR] 사용자 인터페이스 어댑터 / [EN] User Interface Adapters / [JP] ユーザーインターフェース
+│   └── 📂 kakao/            # [KR] 카카오톡 챗봇 서비스 / [EN] KakaoTalk Chatbot Service / [JP] カカオトークチャットボット
+│       ├── routes.py        # [KR] 웹훅 핸들러 / [EN] Webhook Handler / [JP] Webhookハンドラー
+│       └── templates.py     # [KR] 응답 템플릿 (기본 카드) / [EN] Response Templates (BasicCard) / [JP] 応答テンプレート (基本カード)
+│
+├── 📂 core/                 # [KR] 3축 탐지 엔진 (핵심) / [EN] The 3-Axis Detection Engine / [JP] 3軸検知エンジン (コア)
+│   ├── 📂 axis_a/           # [KR] [물리] 시간적 일관성 / [EN] [Physical] Temporal Consistency / [JP] [物理] 時間的一貫性
+│   │   ├── geometry.py      # [KR] 3D 헤드 포즈 불일치 분석 / [EN] Head Pose Inconsistency / [JP] 3Dヘッドポーズ不一致分析
+│   │   └── lip_sync.py      # [KR] 의미론적 떨림 및 위상 지연 / [EN] Semantic Jitter & Phase Lag / [JP] 意味論的ジッターと位相遅延
+│   ├── 📂 axis_b/           # [KR] [생체] 생체 신호 감지 / [EN] [Bio] Physiological Signal / [JP] [生体] 生体信号検知
+│   │   ├── evm.py           # [KR] 영상 색상 증폭 기술 / [EN] Eulerian Video Magnification / [JP] 映像色増幅技術 (EVM)
+│   │   └── rppg.py          # [KR] 심박 신호 추출 (FFT) / [EN] Heartbeat Signal Extraction / [JP] 心拍信号抽出 (FFT)
+│   ├── 📂 axis_c/           # [KR] [시각] 디지털 아티팩트 / [EN] [Visual] Digital Artifacts / [JP] [視覚] デジタルアーティファクト
+│   │   ├── efficientnet.py  # [KR] EfficientNet (MPS 가속) / [EN] EfficientNet-B0 (MPS Optimized) / [JP] EfficientNet (MPS加速)
+│   │   └── artifacts.py     # [KR] 격자무늬 패턴 탐지 / [EN] Checkerboard Pattern Detection / [JP] 格子模様パターン検知
+│   └── ensemble.py          # [KR] 가중치 투표 알고리즘 / [EN] Weighted Voting Algorithm / [JP] 加重投票アルゴリズム
+│
+├── 📂 preprocessing/        # [KR] 스마트 영상 전처리 / [EN] Smart Video Processing / [JP] スマート映像前処理
+│   ├── biopsy.py            # [KR] 3-Point 생체검사 (10초 샘플링) / [EN] "3-Point Biopsy" (Sampling 10s clips) / [JP] 3点生検 (10秒サンプリング)
+│   ├── ffmpeg.py            # [KR] 하드웨어 가속 디코딩 / [EN] Hardware Accelerated Decoding / [JP] ハードウェアアクセラレーションデコード
+│   └── frames.py            # [KR] 정규화 및 리사이징 / [EN] Normalization & Resizing / [JP] 正規化およびリサイズ
+│
+├── 📂 infrastructure/       # [KR] 서버 설정 / [EN] Server Configuration / [JP] サーバー設定
+│   ├── celery_app.py        # [KR] 비동기 작업 관리자 (Redis) / [EN] Async Task Manager (Redis) / [JP] 非同期タスク管理 (Redis)
+│   ├── config.py            # [KR] M4 Metal(MPS) 설정 / [EN] M4 Metal(MPS) Settings / [JP] M4 Metal(MPS)設定
+│   └── logging.py           # [KR] 시스템 모니터링 / [EN] System Monitoring / [JP] システムモニタリング
+│
+├── 📂 jobs/                 # [KR] 백그라운드 작업 / [EN] Background Tasks / [JP] バックグラウンドタスク
+│   ├── tasks.py             # [KR] 분석 워크플로우 정의 / [EN] Analysis Workflow Definition / [JP] 分析ワークフロー定義
+│   └── schemas.py           # [KR] 데이터 유효성 검사 (Pydantic) / [EN] Data Validation (Pydantic) / [JP] データバリデーション (Pydantic)
+│
+├── 📂 storage/              # [KR] I/O 관리 / [EN] I/O Management / [JP] I/O管理
+│   ├── cache.py             # [KR] Redis 인터페이스 / [EN] Redis Interface / [JP] Redisインターフェース
+│   └── model_registry.py    # [KR] 모델 로딩 및 버전 관리 / [EN] Model Loading & Versioning / [JP] モデル読み込みとバージョン管理
+│
+├── 📂 deploy/               # [KR] 배포 설정 / [EN] Deployment Configs / [JP] デプロイ設定
+│   └── 📂 cloudflare/
+│       └── tunnel.yml       # [KR] 보안 터널 설정 / [EN] Secure Tunneling Setup / [JP] セキュアトンネル設定
+│
+├── 📂 weights/              # [KR] 학습된 모델 가중치 (.pth) / [EN] Pre-trained Model Weights / [JP] 学習済みモデルの重み
+├── app.py                   # [KR] 메인 애플리케이션 진입점 / [EN] Main Application Entry Point / [JP] メインアプリケーションエントリーポイント
+└── requirements.txt         # [KR] Python 의존성 목록 / [EN] Python Dependencies / [JP] Python依存関係リスト
+
+---
 
 ### 🌍 Language Select
 [🇰🇷 **한국어 (Korean)**](#-한국어-korean) | [🇺🇸 **English**](#-english) | [🇯🇵 **日本語 (Japanese)**](#-日本語-japanese)
