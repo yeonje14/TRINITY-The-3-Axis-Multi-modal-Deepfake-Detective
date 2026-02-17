@@ -10,9 +10,18 @@
 [![Service: KakaoTalk Chatbot](https://img.shields.io/badge/Service-KakaoTalk%20Chatbot-F7E600.svg)](https://i.kakao.com/)
 
 ---
+
+### 🌍 Language Select
+[🇰🇷 **한국어 (Korean)**](#-한국어-korean) | [🇺🇸 **English**](#-english) | [🇯🇵 **日本語 (Japanese)**](#-日本語-japanese)
+
+---
+
+
+> ⚠️ **Research Prototype / Under Active Development**  
+> This repository is a research/engineering prototype. Results, thresholds, and performance metrics will be updated as experiments progress.
+
 ## 📂 Project Structure
 
-```bash
 TRINITY/
 ├── 📂 interfaces/           # [KR] 사용자 인터페이스 어댑터 / [EN] User Interface Adapters / [JP] ユーザーインターフェース
 │   └── 📂 kakao/            # [KR] 카카오톡 챗봇 서비스 / [EN] KakaoTalk Chatbot Service / [JP] カカオトークチャットボット
@@ -56,16 +65,6 @@ TRINITY/
 ├── 📂 weights/              # [KR] 학습된 모델 가중치 (.pth) / [EN] Pre-trained Model Weights / [JP] 学習済みモデルの重み
 ├── app.py                   # [KR] 메인 애플리케이션 진입점 / [EN] Main Application Entry Point / [JP] メインアプリケーションエントリーポイント
 └── requirements.txt         # [KR] Python 의존성 목록 / [EN] Python Dependencies / [JP] Python依存関係リスト
-
-
-
-### 🌍 Language Select
-[🇰🇷 **한국어 (Korean)**](#-한국어-korean) | [🇺🇸 **English**](#-english) | [🇯🇵 **日本語 (Japanese)**](#-日本語-japanese)
-
----
-
-> ⚠️ **Research Prototype / Under Active Development**  
-> This repository is a research/engineering prototype. Results, thresholds, and performance metrics will be updated as experiments progress.
 
 <br>
 
