@@ -76,7 +76,7 @@ TRINITY/
 ## 🇰🇷 한국어 (Korean)
 
 ### 1. 프로젝트 개요 (Overview)
-**TRINITY**는 단일 모델 기반 탐지기의 한계를 보완하기 위해, 서로 다른 성격의 단서를 결합하는 **3축(Temporal / Physiological / Visual) 앙상블 딥페이크 탐지 시스템**입니다.
+**TRINITY**는 단일 모델 기반 탐지기의 한계를 보완하기 위해, 서로 다른 성격의 단서를 결합하는 **3축(Temporal / Physiological / Visual) 앙상블 AI 영상 탐지 시스템**입니다.
 
 - **환경:** **MacBook Air (M4)** 등 Apple Silicon (PyTorch **MPS** 가속 활용)
 - **목표:** 다양한 화질/압축/생성 방식 조건에서의 **강건성(Robustness)**을 높이고, **카카오톡 챗봇** 기반의 간편한 인터페이스로 디지털 취약 계층(노년층)의 접근성을 강화합니다.
@@ -153,7 +153,7 @@ TRINITY/
 ## 🇺🇸 English
 
 ### 1. Project Overview
-**TRINITY** is a **3-axis ensemble deepfake detection system** that combines **Temporal**, **Physiological**, and **Visual** cues to improve robustness beyond single-modal detectors.
+**TRINITY** is a **3-axis ensemble AI Video detection system** that combines **Temporal**, **Physiological**, and **Visual** cues to improve robustness beyond single-modal detectors.
 
 - **Environment:** Apple Silicon (e.g., MacBook Air M4) with **PyTorch MPS** acceleration
 - **Goal:** Improve robustness across compression/quality/generation conditions and provide an accessible interface via a **KakaoTalk chatbot**.
@@ -174,7 +174,7 @@ TRINITY/
 ### 3. Core Engine: Trinity 3-Axis
 
 #### **Axis A: Temporal Consistency**
-> *Deepfake synthesis may introduce geometric and temporal inconsistencies.*
+> *AI Video synthesis may introduce geometric and temporal inconsistencies.*
 
 - **A1. Head Pose Inconsistency**
   - **Idea:** Pose estimated from inner facial landmarks can disagree with pose from outer contours.
